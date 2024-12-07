@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/providers/theme-providers";
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,13 +22,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/light.svg",
-        href: "/light.svg",
+        url: "/logo.svg",
+        href: "/logo.svg",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/Dark.svg",
-        href: "/Dark.svg",
+        url: "/logo-dark.svg",
+        href: "/logo-dark.svg",
       },
     ],
   },
@@ -38,11 +40,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ConvexClientProvider>
+
+       <ThemeProvider
+       attribute="class"
+       defaultTheme="system"
+       enableSystem
+       disableTransitionOnChange
+       storageKey="jotion-theme-2"
+       >
         {children}
+
+       </ThemeProvider>
+         </ConvexClientProvider>
+      
+      
+      
       </body>
     </html>
   );
