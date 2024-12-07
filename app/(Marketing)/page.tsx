@@ -1,5 +1,6 @@
 import { Header } from "./_components/header";
 import Heros from "./_components/Heros";
+import Footer from "./_components/footer";
 
  const Marketingpage = () => {
   return ( 
@@ -8,7 +9,10 @@ import Heros from "./_components/Heros";
        md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">
     <Header />
     <Heros />
-     </div>
+</div>
+     <Footer />
+    
+    
     </div>
    );
  }
