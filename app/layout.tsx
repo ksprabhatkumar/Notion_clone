@@ -1,4 +1,4 @@
-import {Toaster } from "sonner";
+import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -47,22 +47,22 @@ export default function RootLayout({
       >
         <ConvexClientProvider>
 
-       <ThemeProvider
-       attribute="class"
-       defaultTheme="system"
-       enableSystem
-       disableTransitionOnChange
-       storageKey="jotion-theme-2"
-       >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            storageKey="jotion-theme-2"
+          >
 
-        <Toaster position="bottom-center" />
-        {children}
+            <Toaster position="bottom-center" />
+            {children}
 
-       </ThemeProvider>
-         </ConvexClientProvider>
-      
-      
-      
+          </ThemeProvider>
+        </ConvexClientProvider>
+
+
+
       </body>
     </html>
   );

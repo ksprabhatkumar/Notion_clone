@@ -13,8 +13,8 @@ export default defineSchema({
         isPublished: v.boolean(),
     })
 
-    .index("by_userId", ["userId"])
-    .index("by_user_parent", ["userId","parentDocument"])
+        .index("by_userId", ["userId"])
+        .index("by_user_parent", ["userId", "parentDocument"])
 })
 
 
