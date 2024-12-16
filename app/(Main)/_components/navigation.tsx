@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { ElementRef, useState, useRef, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
+import { UserItems } from "./user-items";
 
 
 const Navigation = () => {
@@ -121,9 +122,7 @@ const Navigation = () => {
 
                 </div>
                 <div>
-                    <p>
-                        Action items
-                    </p>
+                   <UserItems />
                 </div>
 
                 <div className="mt-4">
