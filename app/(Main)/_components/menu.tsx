@@ -7,12 +7,13 @@ import { useMutation } from "convex/react";
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import { DropdownMenu,
+import {
+    DropdownMenu,
     DropdownMenuTrigger,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator
- } from "@radix-ui/react-dropdown-menu";
+} from "@radix-ui/react-dropdown-menu";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontalIcon, Trash } from "lucide-react";
@@ -24,15 +25,15 @@ interface MenuProps { documentId: Id<"documents"> };
 
 export const Menu = ({
     documentId
-} : MenuProps) => {
+}: MenuProps) => {
 
     const router = useRouter();
-    const {user} = useUser();
+    const { user } = useUser();
     const archive = useMutation(api.documents.archive);
 
 
-    const onArchive = () =>{
-        const promise = archive({id: documentId})
+    const onArchive = () => {
+        const promise = archive({ id: documentId })
 
 
         toast.promise(promise, {
@@ -44,40 +45,41 @@ export const Menu = ({
         router.push("/documents");
     }
 
-    return ( 
-       <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button size="sm" variant="ghost">
-            <MoreHorizontalIcon className="h-4 w-4"/>
-        </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent 
-        className="w-60"
-        align="end"
-        alignOffset={8}
-        forceMount>
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button size="sm" variant="ghost">
+                    <MoreHorizontalIcon className="h-4 w-4" />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+                className="w-60"
+                align="end"
+                alignOffset={8}
+                forceMount>
 
-<DropdownMenuItem onClick={onArchive}>
-    
-    <Trash  className="h-4 w-4 mr-2"/>
+                <DropdownMenuItem onClick={onArchive}>
 
-</DropdownMenuItem>
-<DropdownMenuSeparator/>
-<div className="text-xs text-muted-foreground p-2">
-    Last edited by: {user?.fullName}
-</div>
+                    <Trash className="h-4 w-4 mr-2" />
 
-        </DropdownMenuContent>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <div className="text-xs text-muted-foreground p-2">
+                    Last edited by: {user?.fullName}
+                </div>
 
-       </DropdownMenu>
-     );
+            </DropdownMenuContent>
+
+        </DropdownMenu>
+    );
 }
- 
 
-Menu.Skeleton = function MenuSkeleton(){
+
+Menu.Skeleton = function MenuSkeleton() {
     return (
         <Skeleton className="h-10 w-10" />
 
-        
-    )}
+
+    )
+}
 

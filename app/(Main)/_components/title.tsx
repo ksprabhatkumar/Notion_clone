@@ -70,12 +70,12 @@ export const Title = ({
             {isEditing ?
                 (
                     <Input
-                    ref ={inputRef}
-                    onClick={enableInput}
-                    onBlur={disableInput}
-                    onChange={onChange}
-                    onKeyDown={onKeydown}
-                    value={title}
+                        ref={inputRef}
+                        onClick={enableInput}
+                        onBlur={disableInput}
+                        onChange={onChange}
+                        onKeyDown={onKeydown}
+                        value={title}
                         className="h-7 px-2 focus-visible:ring-transparent" />
                 )
                 : (
