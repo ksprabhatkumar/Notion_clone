@@ -6,22 +6,25 @@ import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } fro
 import { usePathname } from "next/navigation";
 import { ElementRef, useState, useRef, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
-import { Popover , PopoverTrigger,PopoverContent} from "@/components/ui/popover";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 
 import { toast } from "sonner";
 import { UserItems } from "./user-items";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import {Item} from "./items";
+import { Item } from "./items";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
-
+import { useSearch } from "@/hook/use-search";
+import { useSettings } from "@/hook/use-settings";
 
 
 const Navigation = () => {
+    const settings = useSettings();
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
 
+    const search = useSearch();
 
     const create = useMutation(api.documents.create);
 
@@ -157,12 +160,12 @@ const Navigation = () => {
                         label="Search"
                         icon={Search}
                         isSearch
-                        onClick={() => { }}
+                        onClick={search.onOpen}
                     />
                     <Item
                         label="Settings"
                         icon={Settings}
-                        onClick={() => { }}
+                        onClick={settings.onOpen}
                     />
                     <Item
                         onClick={handleCreate}
@@ -181,11 +184,11 @@ const Navigation = () => {
                     <Popover>
                         <PopoverTrigger className="w-full mt-4">
                             <Item label="Trash" icon={Trash} />
-                             
+
                         </PopoverTrigger>
-                     <PopoverContent
-                     className="w-72 p-0" side={isMobile ? "bottom" : "right"}>
-                        <TrashBox />
+                        <PopoverContent
+                            className="w-72 p-0" side={isMobile ? "bottom" : "right"}>
+                            <TrashBox />
                         </PopoverContent>
                     </Popover>
                 </div>

@@ -6,14 +6,16 @@ import { redirect } from "next/navigation";
 
 import { Spinner } from "@/components/spinner";
 
-import  Navigation  from "./_components/navigation";
+import Navigation from "./_components/navigation";
+import { Search } from "lucide-react";
+import { SearchCommand } from "@/components/search-command";
 
-const mainLayout = ({children} :{
+const mainLayout = ({ children }: {
     children: React.ReactNode
 }) => {
-    const {isAuthenticated, isLoading} = useConvexAuth();
+    const { isAuthenticated, isLoading } = useConvexAuth();
 
-    if(isLoading){
+    if (isLoading) {
         return (<div className="h-full flex items-center justify-center">
             <Spinner size="lg" />
         </div>);
@@ -23,15 +25,15 @@ const mainLayout = ({children} :{
         return redirect("/");
     }
 
-    return (  
+    return (
         <div className="h-full flex dark:bg-[#1F1F1F] ">
             <Navigation />
             <main className="flex-1 h-full overflow-y-auto">
-
-            {children}
+                < SearchCommand />
+                {children}
             </main>
         </div>
     );
 }
- 
+
 export default mainLayout;

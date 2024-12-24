@@ -1,9 +1,12 @@
 import { Toaster } from "sonner";
+
 import type { Metadata } from "next";
+
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-providers";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { ModlaProvider } from "@/components/providers/modal-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -56,6 +59,7 @@ export default function RootLayout({
           >
 
             <Toaster position="bottom-center" />
+            <ModlaProvider />
             {children}
 
           </ThemeProvider>
