@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 import { Spinner } from "@/components/spinner";
 
-import Navigation from "./_components/navigation";
+import { Navigation } from "./_components/navigation";
 import { Search } from "lucide-react";
 import { SearchCommand } from "@/components/search-command";
 
