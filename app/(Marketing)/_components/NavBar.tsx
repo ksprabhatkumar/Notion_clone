@@ -5,7 +5,7 @@ import { SignInButton, UserButton } from "@clerk/clerk-react";
 import Link from "next/link";
 
 
-import useScrollTop from "@/hook/use-scroll-top";
+import useScrollTop from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { ModeToggle } from "@/components/mode-toggle";

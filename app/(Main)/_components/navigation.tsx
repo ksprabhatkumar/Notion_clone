@@ -15,8 +15,8 @@ import { api } from "@/convex/_generated/api";
 import { Item } from "./items";
 import DocumentList from "./document-list";
 import TrashBox from "./trash-box";
-import { useSearch } from "@/hook/use-search";
-import { useSettings } from "@/hook/use-settings";
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 import { Navbar } from "./navbar";
 
 

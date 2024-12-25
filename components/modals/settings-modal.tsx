@@ -9,7 +9,7 @@
 
 import { useSettings
 
- } from "@/hook/use-settings"; 
+ } from "@/hooks/use-settings"; 
 
  import {Label} from "@/components/ui/label";
  
