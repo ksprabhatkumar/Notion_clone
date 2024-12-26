@@ -51,7 +51,8 @@ export const Menu = ({
                 <Button size="sm" variant="ghost">
                     <MoreHorizontalIcon className="h-4 w-4" />
                 </Button>
-            </DropdownMenuTrigger>
+            </DropdownMenuTrigger>  
+            
             <DropdownMenuContent
                 className="w-60"
                 align="end"
