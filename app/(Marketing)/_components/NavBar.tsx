@@ -45,7 +45,7 @@ const NavBar = () => {
             {isAuthenticated && !isLoading && (
                 <>
                     <Button variant="ghost" size="sm" asChild>
-                        <Link href="/document">
+                        <Link href="/documents">
                             Enter Jotion
                         </Link>
                         </Button>

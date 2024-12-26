@@ -34,7 +34,7 @@ export const Header = () => {
 
 
             <Button asChild>
-                <Link href="/document">
+                <Link href="/documents">
 
                     Get Started
                     <ArrowRight className="h-4 w-4 ml-2" />
