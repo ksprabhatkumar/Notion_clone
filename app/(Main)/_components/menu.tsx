@@ -7,17 +7,12 @@ import { useMutation } from "convex/react";
 
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuSeparator
-} from "@radix-ui/react-dropdown-menu";
+
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { MoreHorizontalIcon, Trash } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 
 
@@ -50,9 +45,10 @@ export const Menu = ({
             <DropdownMenuTrigger asChild>
                 <Button size="sm" variant="ghost">
                     <MoreHorizontalIcon className="h-4 w-4" />
+
                 </Button>
-            </DropdownMenuTrigger>  
-            
+            </DropdownMenuTrigger>
+
             <DropdownMenuContent
                 className="w-60"
                 align="end"
