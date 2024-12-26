@@ -3,7 +3,7 @@ import {  SignInButton} from "@clerk/clerk-react";
 import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
 import { useConvexAuth } from "convex/react";
-import { Sign } from "crypto";
+ 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 

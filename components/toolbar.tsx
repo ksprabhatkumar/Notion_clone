@@ -8,7 +8,7 @@ import { Doc } from "@/convex/_generated/dataModel";
 import { IconPicker } from "./icon-picker";
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
-import { on } from "events";
+ 
 import { useCoverImage } from "@/hooks/use-cover-image";
 
 interface ToolbarProps {
