@@ -50,6 +50,7 @@ export const Item = ({
         event.stopPropagation();
         if (!id) return;
         const promise = Archive({ id })
+        .then(() => router.push("/documents"))
 
         toast.promise(promise, {
             loading: "Moving to trash...",
@@ -85,7 +86,7 @@ export const Item = ({
                 if (!expanded) {
                     onExpand?.();
                 }
-                // router.push(`documents/${documentId}`);
+                 router.push(`${documentId}`); // error solved
             });
 
         toast.promise(promise, {

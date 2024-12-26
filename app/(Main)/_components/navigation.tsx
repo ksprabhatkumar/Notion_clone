@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils"
 
 import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { ElementRef, useState, useRef, useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
@@ -21,6 +21,7 @@ import { Navbar } from "./navbar";
 
 
 export const Navigation = () => {
+    const router = useRouter();
     const settings = useSettings();
     const params = useParams();
     const pathname = usePathname();
@@ -127,7 +128,7 @@ export const Navigation = () => {
     const handleCreate = () => {
         const promise = create({
             title: "untitled"
-        });
+        }).then ((documentId) => router.push(`/documents/${documentId}`))
         toast.promise(promise, {
             loading: "Creating a new Note...",
             success: "Note created",
@@ -210,7 +211,7 @@ export const Navigation = () => {
                 )}
             >
 
-                {!!params.documentId ? (
+                {!!params?.documentId ? (
                     <Navbar
                         isCollapsed={isCollapsed}
                         onResetWidth={resetWidth}
@@ -224,12 +225,7 @@ export const Navigation = () => {
                     )
                 }
 
-
-
-
-
-
-
+ 
 
 
             </div>
