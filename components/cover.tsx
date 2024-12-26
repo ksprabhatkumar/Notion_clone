@@ -19,7 +19,7 @@ interface CoverProps {
 }
 
 
-  export  const Cover = ({
+export const Cover = ({
     url, preview
 }: CoverProps) => {
     const { edgestore } = useEdgeStore();
@@ -65,7 +65,7 @@ interface CoverProps {
                 <div
                     className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2">
                     <Button
-                        onClick={( ) => coverImage.onReplace(url)}
+                        onClick={() => coverImage.onReplace(url)}
                         className="text-muted-foreground text-xs"
                         variant="outline"
                         size="sm"
@@ -87,8 +87,8 @@ interface CoverProps {
         </div>);
 }
 
- Cover.Skeleton = function  CoverSkeleton() {
+Cover.Skeleton = function CoverSkeleton() {
     return (
         <Skeleton className="w-full h-[12vh]" />
     )
- }
+}

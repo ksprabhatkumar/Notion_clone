@@ -6,14 +6,14 @@ type CoverImageStore = {
     isOpen: boolean;
     onOpen: () => void;
     onClose: () => void;
-    onReplace : (url: string) => void;
+    onReplace: (url: string) => void;
 };
 
 
 export const useCoverImage = create<CoverImageStore>((set) => ({
     url: undefined,
     isOpen: false,
-    onOpen: () => set({ isOpen: true , url: undefined }),
-    onClose: () => set({ isOpen: false , url: undefined }),
-    onReplace: (url) => set({  isOpen : true ,url }),
+    onOpen: () => set({ isOpen: true, url: undefined }),
+    onClose: () => set({ isOpen: false, url: undefined }),
+    onReplace: (url) => set({ isOpen: true, url }),
 }));
