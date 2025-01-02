@@ -7,7 +7,7 @@ import { useDropzone, type DropzoneOptions } from 'react-dropzone';
 import { twMerge } from 'tailwind-merge';
 
 import { Spinner } from "./spinner";
-import Image from 'next/image';
+ 
 import React from 'react';
 
 const variants = {
@@ -145,10 +145,11 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 
                     {imageUrl ? (
                         // Image Preview
-                        <Image
+                        <img
                             className="h-full w-full rounded-md object-cover"
                             src={imageUrl}
                             alt={acceptedFiles[0]?.name}
+                            
                         />
                     ) : (
                         // Upload Icon
