@@ -1,7 +1,7 @@
 export default {
     providers: [
       {
-        domain: "https://renewing-javelin-72.clerk.accounts.dev",
+        domain: "https://famous-halibut-59.clerk.accounts.dev",
         applicationID: "convex",
       },
     ]
