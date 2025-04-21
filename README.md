@@ -7,7 +7,7 @@ A sleek, Notion-inspired note-taking application built with modern web technolog
 
 ## 🚀 Live Demo
 
-👉 [https://note-taking-app-xi-rose.vercel.app/](https://note-taking-app-xi-rose.vercel.app/)
+👉 [https://note-taking-app-xi-rose.vercel.app/](mynotetaking-omega.vercel.app)
 
 ## ✨ Features
 
